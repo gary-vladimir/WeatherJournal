@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
 
 html {
     height: -webkit-fill-available;
+    font-family: 'Outfit', sans-serif;
 }
 
 body {
@@ -10,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(https://cdn.pixabay.com/photo/2016/08/09/21/54/lake-1581879_960_720.jpg);
+    background-image: url(/images/defaultBackground.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -20,80 +21,84 @@ body {
 }
 
 .mainCard {
-    border: 1px solid gainsboro;
     color: white;
-    width: 300px;
-    height: 550px;
-    background-color: rgba(0, 0, 0, 0.35);
-    font-family: 'Comfortaa', cursive;
     display: flex;
     flex-direction: column;
     align-items: center;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    gap: 2em;
+    width: 350px;
+}
+
+#card {
+    width: calc(100% - 4em);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #FFF;
+    padding-left: 2em;
+    padding-right: 2em;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 #weatherIcon {
-    width: 100%;
+    width: 80%;
 }
 
 #temperature {
-    font-size: 4em;
+    font-size: 5em;
     text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5em;
 }
+
 #description {
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-align: center;
+    margin-top: 2em;
+    text-wrap: wrap;
 }
+
 #inputCity {
-    width: 80%;
-    border-radius: 0px;
-    font-family: 'Comfortaa', cursive;
-    font-size: 1.2em;
+    transition: all ease-in-out 150ms;
+    width: calc(100% - 60px);
+    font-size: small;
     color: white;
-    background-color: rgba(255, 255, 255, 0);
-    text-align: center;
-    height: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
     border: none;
-    border-bottom: 1px solid gainsboro;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 15px 30px 15px 30px;
 }
+
 #inputCity:focus {
     outline: none;
+    border-bottom: 1px solid white;
 }
+
 #inputCity::placeholder {
-    color: gainsboro;
+    transition: all ease-in-out 150ms;
+    color: rgba(255, 255, 255, 0.75);
 }
+
+#inputCity:focus::placeholder {
+    opacity: 0.1;
+}
+
 #submit {
-    transition: 0.3s;
-    margin-top: 25px;
-    text-align: center;
-    color: aquamarine;
-    background-color: rgb(0, 95, 95);
-    height: 50px;
-    width: 170px;
-    line-height: 50px;
-    border-radius: 25px;
-    border: 1px solid aquamarine;
+    transition: all ease-in-out 150ms;
+    font-size: 1.1em;
+    display: flex;
+    width: 100%;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #289FD1 0%, #28D1A9 100%);
 }
 
 #submit:hover {
-    margin-top: 20px;
+    transform: translateY(-10px);
     cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.7);
-}
-
-@media (min-width: 450px) and (min-height: 750px) {
-    .mainCard {
-        transform: scale(1.4);
-    }
-}
-@media (min-width: 1000px) and (min-height: 1000px) {
-    .mainCard {
-        transform: scale(1.7);
-    }
-}
-@media (min-width: 1000px) and (min-height: 1300px) {
-    .mainCard {
-        transform: scale(2);
-    }
 }

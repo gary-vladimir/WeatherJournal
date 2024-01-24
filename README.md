@@ -3,7 +3,7 @@
 ## Introduction
 WeatherJournal is an open-source front-end project that provides real-time meteorological data for any city worldwide. This single-page application features a user-friendly interface, complete with SVG images that vividly illustrate the current weather conditions. It also displays beautiful images related to the location, enhancing the overall user experience.
 
-![WeatherJournal App Interface](/screenshot.png)
+![WeatherJournal App Interface](/images/screenshot.png)
 
 *WeatherJournal's User Interface*
 

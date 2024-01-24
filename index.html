@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="index.css" />
-        <title>Weather App</title>
-    </head>
-    <body id="placeImg">
-        <div class="mainCard">
-            <input type="text" placeholder="Enter your city" id="inputCity" />
-            <img
-                src="/iconosWeather/unknown.svg"
-                alt="unknown"
-                id="weatherIcon"
-            />
-            <div id="temperature">?°C</div>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Weather App</title>
+</head>
+
+<body id="placeImg">
+    <div style="z-index: -1; position: absolute;width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>
+    <div class="mainCard">
+        <input type="text" placeholder="Enter Any city world wide here" id="inputCity" />
+        <div id="card">
             <div id="description">- -</div>
-            <div id="submit">Get Weather</div>
+            <img src="/iconosWeather/unknown.svg" alt="unknown" id="weatherIcon" />
+            <div id="temperature">?°C</div>
         </div>
-    </body>
-    <script src="index.js"></script>
+        <div id="submit">Fetch Weather</div>
+    </div>
+</body>
+<script src="index.js"></script>
+
 </html>
