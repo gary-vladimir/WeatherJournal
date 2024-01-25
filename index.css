@@ -6,8 +6,9 @@ html {
 }
 
 body {
+    overflow: hidden;
     margin: 0;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,10 +18,12 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-color: #1d3557;
-    min-height: -webkit-fill-available;
+    height: -webkit-fill-available;
+    width: 100vw;
 }
 
 .mainCard {
+    position: relative;
     color: white;
     display: flex;
     flex-direction: column;
@@ -30,6 +33,7 @@ body {
 }
 
 #card {
+    position: relative;
     width: calc(100% - 4em);
     display: flex;
     flex-direction: column;
@@ -61,6 +65,8 @@ body {
 }
 
 #inputCity {
+    position: relative;
+    z-index: 10;
     transition: all ease-in-out 150ms;
     width: calc(100% - 60px);
     font-size: small;
@@ -86,6 +92,8 @@ body {
 }
 
 #submit {
+    position: relative;
+    z-index: 10;
     transition: all ease-in-out 150ms;
     font-size: 1.1em;
     display: flex;
@@ -101,4 +109,30 @@ body {
 #submit:hover {
     transform: translateY(-10px);
     cursor: pointer;
+}
+
+.decoration {
+    position: absolute;
+    z-index: -100;
+    scale: 0.7;
+}
+
+@media only screen and (max-width: 600px) {
+    .decoration {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .decoration {
+        scale: 1;
+    }
+
+    .mainCard {
+        width: 450px;
+    }
+
+    body {
+        font-size: 1.5em;
+    }
 }
