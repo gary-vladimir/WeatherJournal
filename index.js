@@ -34,9 +34,7 @@ function main() {
 }
 
 function fetchGeonames() {
-    return fetch(
-        `http://api.geonames.org/searchJSON?q=${inputCity.value}&maxRows=1&username=` // add your username
-    )
+    return fetch(`/fetchGeonames?city=${encodeURIComponent(inputCity.value)}`)
         .then((response) => response.json())
         .then((data) => {
             return data;
@@ -45,9 +43,7 @@ function fetchGeonames() {
 }
 
 function fetchWeather(latitude, longitude) {
-    return fetch(
-        `https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=` // add your weatherbit api
-    )
+    return fetch(`/fetchWeather?lat=${latitude}&lon=${longitude}`)
         .then((response) => response.json())
         .then((data) => {
             return data;
@@ -56,15 +52,14 @@ function fetchWeather(latitude, longitude) {
 }
 
 function fetchPixabay(country) {
-    return fetch(
-        `https://pixabay.com/api/?key=&image_type=photo&orientation=horizontal&per_page=3&pretty=true&q=${country}` // add your Pixabay key
-    )
+    return fetch(`/fetchPixabay?country=${encodeURIComponent(country)}`)
         .then((response) => response.json())
         .then((data) => {
             return data;
         })
         .catch((error) => console.log(error));
 }
+
 
 function render(des, temp, icon, image, cityName) {
     description.innerHTML = des + " at " + cityName;
