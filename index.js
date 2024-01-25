@@ -8,8 +8,6 @@ const placeImg = document.getElementById('placeImg');
 submit.addEventListener('click', main);
 
 function main() {
-    console.log('click');
-
     let description;
     let lat;
     let lng;
@@ -17,17 +15,19 @@ function main() {
     let icon;
     let image;
     let country;
+    let cityName;
     fetchGeonames().then((data) => {
         lat = data.geonames[0].lat;
         lng = data.geonames[0].lng;
         country = data.geonames[0].countryName;
+        cityName = data.geonames[0].name;
         fetchWeather(lat, lng).then((data) => {
             description = data.data[0].weather.description;
             temperature = data.data[0].temp;
             icon = data.data[0].weather.icon;
             fetchPixabay(country).then((data) => {
                 image = data.hits[0].largeImageURL;
-                render(description, temperature, icon, image);
+                render(description, temperature, icon, image, cityName);
             });
         });
     });
@@ -66,8 +66,8 @@ function fetchPixabay(country) {
         .catch((error) => console.log(error));
 }
 
-function render(des, temp, icon, image) {
-    description.innerHTML = des;
+function render(des, temp, icon, image, cityName) {
+    description.innerHTML = des + " at " + cityName;
     temperature.innerHTML = `${temp}°C`;
     weatherIcon.src = `/iconosWeather/${icon}.svg`;
     placeImg.style.backgroundImage = `url(${image})`;
