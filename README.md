@@ -19,10 +19,10 @@ WeatherJournal is built using plain CSS, HTML, and JavaScript. It integrates thr
 - [**Pixabay**](https://pixabay.com/): To retrieve and display location-related images.
 
 ## How to Use
-1. **Installation**: Clone the repository to your local machine.
-2. **APIs Set Up**: make sure you get your Keys from the tools described above and add them to the index.js file
-2. **Running the Application**: Open the `index.html` file in a web browser to launch the application.
-3. **Usage**: 
+1. **Installation**: Clone the repository to your local machine and run `npm i`.
+2. **APIs Set Up**: make sure you get your Keys from the tools described above and add them to the **.env** file
+3. **Running the Application**: run `node .\Server.js` and open up the browser on localhost:5000
+4. **Usage**: 
 - Enter the name of the city in the search bar.
 - Press the 'Get Weather' button to view the weather data and related images.
 
